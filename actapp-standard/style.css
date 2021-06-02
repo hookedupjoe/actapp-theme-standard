@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+/*!
+Theme Name: Semantic Action Theme
+Theme URI: https://hookedup.com/
+Author: hookedup, inc.
+Author URI: https://hookedup.com/
+Description: Description: Generic theme for Action App based websites
+
+Version: 1.0.1
+
+Tested up to: 5.7
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: SemActionStandardPage
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+_s is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+#page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#page.fixedmenu {
+  margin-top:40px;
+}
+
+.ui.sidebar.overlay.pad0.left.uncover.visible {
+  background-color: black;
+}
+
+.ui.item[action] {
+  cursor: pointer;
+}
+
+#page .full-container {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.nav-area {
+  margin-bottom:10px;
+  background-color:#1b1c1d;
+  color: white;
+}
+
+.inverted-area {
+  background-color:#1b1c1d;
+  color: white;
+}
+.page-footer {
+  margin-top:10px;
+  background-color:#1b1c1d !important;
+  color: white;
+}
+.page-footer .full-container {
+  padding: 10px;
+  
+}
+.ui.cards.sidecards div.image>img {
+  min-height:75px;
+}
+body.admin-bar .ui.top.fixed.menu {
+  margin-top: 30px;
+}
+body.admin-bar .ui.top.fixed.menu {
+  margin-top: 32px;
+}
+body.admin-bar.kodeo-ui-active .ui.top.fixed.menu {
+  margin-top: 42px;
+}
+
+
+.site-content {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.hgroup.full-container.container {
+  padding: 0 10px 0 10px;
+}
+
+.ui.inverted.horizontal.top.fixed.menu {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* SAE Specific */
+
+/*
+.logo-height-constrain {
+	width:250px;
+	height:auto;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px;
+  opacity: 96%;	
+}
+  */
+
+#masthead .hgroup .logo {
+    display: block;
+    max-width: 100%;
+	  padding:5px;
+}
+#masthead .hgroup a {
+    text-decoration: none;
+}
+
+#masthead .hgroup .logo img {
+    vertical-align: middle;
+}
+
+.uiheadergap {
+  height:14px;
+}
+.logo-height-constrain {
+    width: 250px;
+    height: auto;
+    padding: 10px;
+    margin: 0px;
+}
+
+
+#masthead {
+    background: #fcfcfc;
+    padding: 0 35px 0 35px;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    zoom: 1;
+}
+
+#masthead {
+    background-image: url(images/masthead.jpg);
+    background-size: cover;
+}
+#masthead {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+span#footer-thankyou {
+  display: none;
+}
+
+
+textarea.wpcf7-form-control.wpcf7-textarea.textArea {
+  width: 100%;
+}
+
+input.wpcf7-form-control.wpcf7-text.textInput {
+  width: 100%;
+}
+
