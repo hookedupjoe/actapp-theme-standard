@@ -1,4 +1,5 @@
-SAE Detroit Website theme
+Action App Theme
 
 Author: Joseph Francis, hookedup, inc.
-joe@hookedup.com
+https://wp.actionapp.hookedup.com
+
