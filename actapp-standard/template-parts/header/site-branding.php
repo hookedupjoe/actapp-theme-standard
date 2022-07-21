@@ -2,7 +2,7 @@
 /**
  * Displays header site branding
  *
- * @package SemActionStandardPage
+ * @package actionapptheme
  * @since 1.0.0
  */
 

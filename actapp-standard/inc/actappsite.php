@@ -3,7 +3,7 @@
 Customizable entry point specific to this template
 */
 
-/* package: SemActionStandardPage */
+/* package: actionapptheme */
 
 class ActAppSite {
 	private static $instance;

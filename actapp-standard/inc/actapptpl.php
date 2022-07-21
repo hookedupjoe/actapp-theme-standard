@@ -3,7 +3,7 @@
 Common access points for action app template stuff call in other places
 */
 
-/* package: SemActionStandardPage */
+/* package: actionapptheme */
 
 class ActAppTpl {
 	private static $instance;
@@ -17,8 +17,8 @@ class ActAppTpl {
 	public static function get_login_link(){
 		$ret = '';
 		if (!is_user_logged_in()) {
-			//WJF Disabled Login Icon on request from team
-			//$ret .= '<a class="ui item" href="' . wp_login_url($_SERVER["REQUEST_URI"]) . '"><i class="icon user"></i> Login</a>';
+			//ToDo: Make this an option
+			$ret .= '<a class="ui item" href="' . wp_login_url($_SERVER["REQUEST_URI"]) . '"><i class="icon user"></i> Login</a>';
 		} else {
 			$ret .= '<a class="ui item" href="' . wp_logout_url($_SERVER["REQUEST_URI"]) . '"><i class="icon user"></i> Logout</a>';
 		}
@@ -93,75 +93,7 @@ class ActAppTpl {
 
 		$ret .= '</div></div>';
 	
-		$subs = '<div appuse="cards" group="navtabs" item="menu-1" class="hidden">
-		<div class="ui inverted vertical menu top attached fluid">
-		  <a action="toggleNav" href="javascript:void(0)" class="item">
-			<i class="close icon inverted"></i>
-			Close
-		  </a>
-		  <div action="selectMe" group="navtabs" item="menu-1" class="ui message basic mar0">
-			  <i class="folder open outline icon "></i>
-			  Area One
-		  </div>
-		  <a href="http://localhost/actapptpl/area-one/area-one-section-one/" class="item ">
-		  
-			Area One – Section One
-		  </a>
-		  <a href="http://localhost/actapptpl/area-one/area-one-section-two/" class="item ">
-		  
-			Area One – Section Two
-		  </a>
-		  <a href="http://localhost/actapptpl/area-one/area-one-section-three/" class="item">
-		  
-			Area One – Section Three
-		  </a>
-		  <a action="selectMe" group="navtabs" item="menu-top" href="javascript:void(0)" class="item">
-			<i class="left arrow icon inverted"></i>
-			Main Menu
-		  </a>
-		</div>
-	  </div>
-	
-	
-	  <div appuse="cards" group="navtabs" item="menu-2" class="hidden">
-		<div class="ui inverted vertical menu top attached fluid">
-		  <a action="toggleNav" href="javascript:void(0)" class="item">
-			<i class="close icon inverted"></i>
-			Close
-		  </a>
-		  <div action="selectMe" group="navtabs" item="menu-2" class="ui message basic mar0">
-			  <i class="folder open outline icon "></i>
-			  Area Two
-		  </div>
-		  <a href="http://localhost/actapptpl/area-two/area-two-section-one/" class="item ">
-			Area Two – Section One
-		  </a>
-		  <a href="http://localhost/actapptpl/area-two/area-two-section-two/" class="item ">
-			Area Two – Section Two
-		  </a>
-		  <a action="selectMe" group="navtabs" item="menu-top" href="javascript:void(0)" class="item">
-			<i class="left arrow icon inverted"></i>
-			Main Menu
-		  </a>
-		</div>
-	  </div>';
-		// foreach ( $tree as $key => $obj ) {
-		// 	$tmpTitle = $obj->title;			
-		// 	$tmpHasChildren = is_array($obj->children) && sizeof($obj->children) > 0;
-		// 	if( $tmpHasChildren ){
-		// 		$ret .= '<div appcomp="dropdown" class="ui dropdown item nomobile">';
-		// 		$ret .= $tmpTitle.'<i class="dropdown icon"></i>';
-		// 		$ret .= ' <div class="menu">';
-		// 		$ret .= ''.self::get_menu_nav($obj->children);
-		// 		$ret .= ' </div>';
-		// 		$ret .= '</div>';
-		// 	} else {
-		// 		$tmpURL = $obj->url;
-		// 		$ret .= '<a href="'.$tmpURL.'" class="item nomobile">';
-		// 		$ret .= $tmpTitle;
-		// 		$ret .= '</a>';
-		// 	}
-		// }
+		
 		return $ret.$retsubs;
 	}
 
@@ -174,6 +106,14 @@ class ActAppTpl {
 	public static function get_menu_nav_for_loc($theLocationName){
 		$menuname = self::get_menu_for_location( $theLocationName );
 		$tree = self::get_menu_tree( $menuname );
+		return self::get_menu_nav($tree);
+	}
+	public static function get_mobile_nav_for_menu($theMenuName){
+		$tree = self::get_menu_tree( $theMenuName );
+		return self::get_mobile_nav($tree);
+	}
+	public static function get_menu_nav_for_menu($theMenuName){
+		$tree = self::get_menu_tree( $theMenuName );
 		return self::get_menu_nav($tree);
 	}
 	public static function get_menu_nav($tree){

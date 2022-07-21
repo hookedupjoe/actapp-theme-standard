@@ -1,8 +1,8 @@
 <?php
 /**
- * SemActionStandardPage Theme Customizer
+ * actionapptheme Theme Customizer
  *
- * @package SemActionStandardPage
+ * @package actionapptheme
  */
 
 /**

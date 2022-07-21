@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package SemActionStandardPage
+ * @package actionapptheme
  */
 
 /**

@@ -4,7 +4,7 @@
  *
  * @link https://woocommerce.com/
  *
- * @package SemActionStandardPage
+ * @package actionapptheme
  */
 
 /**

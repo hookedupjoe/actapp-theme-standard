@@ -2,10 +2,12 @@
 /**
  * Displays the site navigation.
  *
- * @package SemActionStandardPage
+ * @package actionapptheme
  * @since 1.0.0
  */
 
+//echo '<script>window.test1=1</script>';
+//ToDo: Check for menu override and use below
 ?>
 
 <?php if ( has_nav_menu( 'menu-1' ) ) : ?>
@@ -28,6 +30,7 @@
 		</div>';
 
 	$ret .= ActAppTpl::get_menu_nav_for_loc('menu-1');
+	//demo-> $ret .= ActAppTpl::get_menu_nav_for_menu('app1');
 
 	$ret .= '<div class="right menu inverted">'.ActAppTpl::get_login_link().'</div>';
 

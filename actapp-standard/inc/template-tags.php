@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package SemActionStandardPage
+ * @package actionapptheme
  */
 
 if ( ! function_exists( 'actapptpl_posted_on' ) ) :
@@ -14,7 +14,8 @@ if ( ! function_exists( 'actapptpl_posted_on' ) ) :
 	function actapptpl_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			//<time class="entry-date published" datetime="%1$s">%2$s</time>
+			$time_string = '<time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -28,10 +29,10 @@ if ( ! function_exists( 'actapptpl_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html_x( 'Posted on %s', 'post date', '_actapptpl' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			$time_string
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<div class="ui label blue basic compact pad5 large" style="margin-bottom:10px;">' . $posted_on . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -97,9 +98,15 @@ if ( ! function_exists( 'actapptpl_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', '_actapptpl' ),
+					__( '<hr /><div class="ui button small compact blue pad8">Edit</div> <span class="screen-reader-text">%s</span>', '_actapptpl' ),
 					array(
 						'span' => array(
+							'class' => array(),
+						),
+						'div' => array(
+							'class' => array(),
+						),
+						'hr' => array(
 							'class' => array(),
 						),
 					)

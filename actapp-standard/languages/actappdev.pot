@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: SemActionStandardPage 1.0.0\n"
+"Project-Id-Version: actionapptheme 1.0.0\n"
 "Report-Msgid-Bugs-To: https://hookdup.com"
 "Last-Translator: Joseph Francis <joe@hookedup.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: SemActionStandardPage\n"
+"X-Domain: actionapptheme\n"
 
 #. Theme Name of the theme
 msgid "_s"

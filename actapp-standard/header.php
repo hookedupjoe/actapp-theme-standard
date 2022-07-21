@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package SemActionStandardPage
+ * @package actionapptheme
  */
 
 ?>
@@ -81,7 +81,10 @@
 
 <div class="">
 
-<?php echo ActAppTpl::get_mobile_nav_for_loc('menu-1'); ?>
+<?php 
+echo ActAppTpl::get_mobile_nav_for_loc('menu-1'); 
+//demo-> echo ActAppTpl::get_mobile_nav_for_menu('app1'); 
+?>
   
 
 </div>
