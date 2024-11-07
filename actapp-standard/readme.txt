@@ -2,7 +2,7 @@ Action App Theme
 
 A simple, clean Semantic UI / jQuery based theme.
 
-* (c) 2020-2022 - hookedup, inc.
+* (c) 2020-2024 - hookedup, inc.
 * Author - Joseph Francis
 * License - License: GPLv3
 https://wp.actionapp.hookedup.com

@@ -3,13 +3,13 @@
 /*!
 Theme Name: ActionApp For Wordpress
 Theme URI: https://wp.actionapp.hookedup.com/
-(c) 2020-2022 - hookedup, inc.
+(c) 2020-2024 - hookedup, inc.
 Author: hookedup, inc.
 Author URI: https://hookedup.com/
 Description: Description: A theme for Action App based websites.
 
 
-Version: 1.0.8
+Version: 1.0.9
 
 Tested up to: 6.0
 Requires PHP: 5.6
@@ -167,7 +167,7 @@ body.admin-bar header>div.site-branding {
 }
 @media screen and (max-width: 782px){
   body.admin-bar header>div.site-branding {
-    margin-top: 46px;
+    margin-top: 32px;
   }
 }
 
