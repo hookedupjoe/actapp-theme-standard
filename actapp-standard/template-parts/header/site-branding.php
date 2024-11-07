@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="site-branding">
+<div class="site-branding-header">
   <div id="masthead">
     <div class="hgroup full-container ">
 
