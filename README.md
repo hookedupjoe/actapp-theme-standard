@@ -7,10 +7,11 @@ A simple, clean Semantic UI / jQuery based theme.
 * License - License: GPLv3
 https://wp.actionapp.hookedup.com
 
-## Important: This theme requires the ActionApp-WP plugin
+**Important:** This theme requires the ActionApp-WP plugin
 
 Github Repo Release (Plugin Zip File)
 https://github.com/hookedupjoe/actionapp-wp/releases
 
 Github Repo
 https://github.com/hookedupjoe/actionapp-wp
+
