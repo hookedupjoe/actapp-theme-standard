@@ -182,17 +182,21 @@ add_action( 'widgets_init', 'actapptpl_widgets_init' );
  */
 function actapptpl_scripts() {
 	wp_enqueue_style( 'actapptpl-style', get_stylesheet_uri(), array(), ACTAPPSTD_VERSION );
-	//wp_style_add_data( 'actapptpl-style', 'rtl', 'replace' );
-	
-	//wp_enqueue_script( 'actapptpl-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ACTAPPSTD_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	remove_action('wp_head', '_admin_bar_bump_cb');
+    wp_enqueue_style( 'admin_css_wp', get_template_directory_uri() . '/wp-widgets.css', false, '1.0.0' );
 	
 }
 add_action( 'wp_enqueue_scripts', 'actapptpl_scripts' );
+
+add_action( 'admin_enqueue_scripts', 'actapptpl_admin_style' );
+function actapptpl_admin_style() {
+    wp_enqueue_style( 'admin_css_wp', get_template_directory_uri() . '/wp-widgets.css', false, '1.0.0' );
+
+}
 
 /**
  * Implement the Custom Header feature.
@@ -373,7 +377,7 @@ function actapp_customizer_remove_sections( $wp_customize ) {
 	//$wp_customize->remove_panel('nav_menus');
 
 	$wp_customize->remove_panel('widgets');
-//TODO: Use: customize_loaded_components filter 
+//ToDo: Change to use: customize_loaded_components filter 
 
 	//$wp_customize->remove_section('custom_css');	
 	//$wp_customize->remove_section('colors');

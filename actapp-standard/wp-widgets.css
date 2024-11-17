@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/*!
+Theme Wordpress Widget CSS
+*/
+
+/* Formatting to help out of ox widgets look better */
+
+.wp-block-quote {
+  padding: 10px;
+}
+
+.wp-block-code {
+  border: solid 2px #222222;
+  padding: 5px;
+}
+
+.wp-block-details summary {
+  padding:8px;
+  margin-top:4px;
+  margin-bottom:4px;
+}
+
+.wp-block-pullquote {
+  padding:18px;
+}
+.wp-block-pullquote blockquote {
+  padding:8px;
+  border-top: solid 2px #222222;
+  border-bottom: solid 2px #222222;
+}
+
+.wp-block-verse {
+  padding:8px;
+  border: solid 2px #222222;
+}
+
+
+.wp-block-columns.is-layout-flex {
+  gap: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+  .wp-block-media-text__content {
+    margin-top:10px;
+  }
+}
