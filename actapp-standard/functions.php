@@ -369,9 +369,12 @@ add_action( 'wp_head', function() {
 
 function actapp_customizer_remove_sections( $wp_customize ) {
 
-	$wp_customize->remove_section('header_image');
+	//$wp_customize->remove_section('header_image');
 	//$wp_customize->remove_panel('nav_menus');
+
 	$wp_customize->remove_panel('widgets');
+//TODO: Use: customize_loaded_components filter 
+
 	//$wp_customize->remove_section('custom_css');	
 	//$wp_customize->remove_section('colors');
 	$wp_customize->remove_section('background_image');

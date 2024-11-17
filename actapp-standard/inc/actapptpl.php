@@ -217,16 +217,9 @@ class ActAppTpl {
 
 	public static function getRecentPosts($theMax = 0, $thePage = 1){
 
-
+		
 		// Query arguments.
 		$query = array(
-			'offset'              => $args['offset'],
-			'posts_per_page'      => $args['limit'],
-			'orderby'             => $args['orderby'],
-			'order'               => $args['order'],
-			'post_type'           => $args['post_type'],
-			'post_status'         => $args['post_status'],
-			'ignore_sticky_posts' => $args['ignore_sticky'],
 		);
 	
 		// Exclude current post

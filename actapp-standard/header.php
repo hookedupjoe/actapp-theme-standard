@@ -99,7 +99,7 @@ echo ActAppTpl::get_mobile_nav_for_loc('menu-1');
 </div>
 
 <?php wp_body_open(); ?>
-<div id="page" class="pusher">
+<div id="page" class="pusher bootstrap-wrapper">
 	<?php get_template_part( 'template-parts/header/site-header' ); ?>
 	<div class="hgroup full-container container">
 	<div id="content" class="site-content">
