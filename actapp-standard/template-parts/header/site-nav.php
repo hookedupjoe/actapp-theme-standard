@@ -16,11 +16,17 @@
 	$menuname = ActAppTpl::get_menu_for_location( 'menu-1' );
 	$tree = ActAppTpl::get_menu_tree( $menuname );
 	$json = json_encode( $tree );
-
+	$inverted = '';
+	//$invertedSetting = "";
+	$colorThemeSetting = get_theme_mod( 'color_theme' );
+	if( $colorThemeSetting != "white"  ){
+		$inverted = ' inverted ';
+	}
+	
 	?>
 	<div class="nav-area noprint">
 	<nav class="full-container">
-    <div class="ui inverted horizontal top menu">
+    <div class="ui <?php echo $inverted . ' ' . $colorThemeSetting ?> horizontal top menu">
 	
 	<?php
 	

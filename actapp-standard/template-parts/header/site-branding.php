@@ -10,7 +10,7 @@
 ?>
 
 <div class="site-branding-header">
-  <div id="masthead">
+  <div id="masthead" class="page-header">
     <div class="hgroup full-container ">
 
     <?php if ( is_active_sidebar( 'sidebar-h' ) ) {?>

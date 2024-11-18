@@ -9,7 +9,7 @@ Author URI: https://hookedup.com/
 Description: Description: A theme for Action App based websites.
 
 
-Version: 1.0.11
+Version: 1.0.12
 
 Tested up to: 6.0
 Requires PHP: 5.6
@@ -57,9 +57,13 @@ This theme, like WordPress, is licensed under the GPL.
   background-color:#1b1c1d;
   color: white;
 }
+.page-header {
+  background-color:#1b1c1d;
+  color: white;
+}
 .page-footer {
   margin-top:10px;
-  background-color:#1b1c1d !important;
+  background-color:#1b1c1d;
   color: white;
 }
 .page-footer .full-container {
@@ -132,7 +136,6 @@ body.admin-bar.kodeo-ui-active .ui.top.fixed.menu {
 
 
 #masthead {
-    background: #fcfcfc;
     padding: 0 35px 0 35px;
     -ms-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -142,7 +145,6 @@ body.admin-bar.kodeo-ui-active .ui.top.fixed.menu {
 }
 
 #masthead {
-    background-image: url(images/masthead.jpg);
     background-size: cover;
 }
 #masthead {
@@ -171,4 +173,202 @@ body.admin-bar header>div.site-branding {
     margin-top: 32px;
   }
 }
+
+
+
+/*  Semantic UI Theme CSS */
+
+/*--- Black ---*/
+
+.theme-black .page-header, .theme-black .page-footer {
+	background-color: black !important;
+}
+theme-black .nav-area {
+	background-color: #1b1c1d !important;
+}
+
+
+/*--- Red ---*/
+
+.theme-red .page-header, .theme-red .nav-area, .theme-red .page-footer {
+	background-color: #DB2828 !important;
+}
+
+/*--- Orange ---*/
+
+.theme-orange .page-header, .theme-orange .nav-area, .theme-orange .page-footer {
+	background-color: #F2711C !important;
+}
+
+/*--- Olive ---*/
+
+.theme-olive .page-header, .theme-olive .nav-area, .theme-olive .page-footer {
+	background-color: #B5CC18 !important;
+}
+
+/*--- Yellow ---*/
+
+.theme-yellow .page-header, .theme-yellow .nav-area, .theme-yellow .page-footer {
+	background-color: #FBBD08 !important;
+}
+
+/*--- Green ---*/
+
+.theme-green .page-header, .theme-green .nav-area, .theme-green .page-footer {
+	background-color: #21BA45 !important;
+}
+
+/*--- Teal ---*/
+
+.theme-teal .page-header, .theme-teal .nav-area, .theme-teal .page-footer {
+	background-color: #00B5AD !important;
+}
+
+/*--- Blue ---*/
+
+.theme-blue .page-header, .theme-blue .nav-area, .theme-blue .page-footer {
+	background-color: #2185D0 !important;
+}
+
+/*--- Violet ---*/
+
+.theme-violet .page-header, .theme-violet .nav-area, .theme-violet .page-footer {
+	background-color: #6435C9 !important;
+}
+
+/*--- Purple ---*/
+
+.theme-purple .page-header, .theme-purple .nav-area, .theme-purple .page-footer {
+	background-color: #A333C8 !important;
+}
+
+/*--- Pink ---*/
+
+.theme-pink .page-header, .theme-pink .nav-area, .theme-pink .page-footer {
+	background-color: #E03997 !important;
+}
+
+/*--- Brown ---*/
+
+.theme-brown .page-header, .theme-brown .nav-area, .theme-brown .page-footer {
+	background-color: #A5673F !important;
+}
+
+/*--- Grey ---*/
+
+.theme-grey .page-header, .theme-grey .nav-area, .theme-grey .page-footer {
+	background-color: #767676 !important;
+}
+
+
+/*--- White ---*/
+
+.theme-white .page-header, .theme-white .nav-area, .theme-white .page-footer {
+	background-color: white !important;
+}
+
+
+
+/* LIGHT VERSIONS */
+
+
+/*--- Red ---*/
+.theme-light-red .page-header,  .theme-light-red .page-footer {
+  background-color: #FFE8E6;
+  color: #DB2828;
+}
+
+.theme-light-orange .page-header,  .theme-light-orange .page-footer {
+  background-color: #FFEDDE;
+  color: #F2711C;
+}
+
+.theme-light-yellow .page-header,  .theme-light-yellow .page-footer {
+  background-color: #FFF8DB;
+  color: #B58105;
+}
+
+.theme-light-olive .page-header,  .theme-light-olive .page-footer {
+  background-color: #FBFDEF;
+  color: #8ABC1E;
+}
+
+.theme-light-green .page-header,  .theme-light-green .page-footer {
+  background-color: #E5F9E7;
+  color: #1EBC30;
+}
+
+.theme-light-teal .page-header,  .theme-light-teal .page-footer {
+  background-color: #E1F7F7;
+  color: #10A3A3;
+}
+
+.theme-light-blue .page-header,  .theme-light-blue .page-footer {
+  background-color: #DFF0FF;
+  color: #2185D0;
+}
+
+.theme-light-violet .page-header,  .theme-light-violet .page-footer {
+  background-color: #EAE7FF;
+  color: #6435C9;
+}
+
+.theme-light-purple .page-header,  .theme-light-purple .page-footer {
+  background-color: #F6E7FF;
+  color: #A333C8;
+}
+
+.theme-light-pink .page-header,  .theme-light-pink .page-footer {
+  background-color: #FFE3FB;
+  color: #E03997;
+}
+
+.theme-light-brown .page-header,  .theme-light-brown .page-footer {
+  background-color: #F1E2D3;
+  color: #A5673F;
+}
+
+
+.theme-light-red .nav-area {
+	background-color: #DB2828 !important;
+}
+.theme-light-orange .nav-area {
+	background-color: #F2711C !important;
+}
+.theme-light-olive .nav-area {
+	background-color: #B5CC18 !important;
+}
+.theme-light-yellow .nav-area {
+	background-color: #FBBD08 !important;
+}
+.theme-light-green .nav-area {
+	background-color: #21BA45 !important;
+}
+.theme-light-teal .nav-area {
+	background-color: #00B5AD !important;
+}
+.theme-light-blue .nav-area {
+	background-color: #2185D0 !important;
+}
+.theme-light-violet .nav-area {
+	background-color: #6435C9 !important;
+}
+.theme-light-purple .nav-area {
+	background-color: #A333C8 !important;
+}
+.theme-light-pink .nav-area {
+	background-color: #E03997 !important;
+}
+.theme-light-brown .nav-area {
+	background-color: #A5673F !important;
+}
+.theme-light-grey .nav-area {
+	background-color: #767676 !important;
+}
+.theme-light-white .nav-area {
+	background-color: white !important;
+}
+
+
+
 

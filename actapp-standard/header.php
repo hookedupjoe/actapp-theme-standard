@@ -83,23 +83,36 @@
 
 <?php 
 echo ActAppTpl::get_mobile_nav_for_loc('menu-1'); 
-//demo-> echo ActAppTpl::get_mobile_nav_for_menu('app1'); 
 ?>
-  
-
-</div>
-
-
-
-
-
-
 
 
 </div>
 
-<?php wp_body_open(); ?>
-<div id="page" class="pusher bootstrap-wrapper">
+
+
+
+
+
+
+
+</div>
+<?php 
+$themeColor = get_theme_mod( 'color_theme' );
+if( !($themeColor) ){
+	$themeColor = 'black';
+}
+
+$themeInvert = get_theme_mod( 'inverted_theme' );
+if( $themeInvert != 'light' ){
+	$themeInvert = '';
+} else {
+	$themeInvert = '-' . $themeInvert;
+}
+$themeName = 'theme' . $themeInvert . '-' . $themeColor;
+wp_body_open();
+?>
+
+<div id="page" class="pusher bootstrap-wrapper <?php echo($themeName); ?>">
 	<?php get_template_part( 'template-parts/header/site-header' ); ?>
 	<div class="hgroup full-container container">
 	<div id="content" class="site-content">

@@ -38,8 +38,11 @@ if ( ! empty( $instance['title'] ) ) {
 
 //ActAppTpl::showRecentPosts($instance);
 $tmpLatest = ActAppTpl::getRecentPosts($tmpMax);
-
-echo ('<div class="ui header blue medium">'.$tmpTitle.'</div>');
+$colorThemeSetting = get_theme_mod( 'color_theme' );
+if( $colorThemeSetting == 'white' ){
+    $colorThemeSetting = 'black';
+}
+echo ('<div class="ui header ' . $colorThemeSetting . ' medium">'.$tmpTitle.'</div>');
 
 echo ('<div class="ui list">');
 
@@ -54,7 +57,7 @@ foreach ($tmpLatest->posts as $aKey => $aPost) {
 
     echo('<a href="'.$tmpURL.'" class="item">');
     echo('<div class="ui button circular basic black fluid">
-    <div class="ui header small blue">'.$tmpPostTitle.'</div>
+    <div class="ui header small ' . $colorThemeSetting . '">'.$tmpPostTitle.'</div>
     <div class="ui ">'.$tmpDate.'</div>
   </div>');
     echo ('</a>');

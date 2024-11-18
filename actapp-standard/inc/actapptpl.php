@@ -67,8 +67,15 @@ class ActAppTpl {
 	
 	public static function get_mobile_nav($tree){
 		$retsubs = '';
+		$inverted = '';
+		$colorThemeSetting = get_theme_mod( 'color_theme' );
+		if( $colorThemeSetting != "white"  ){
+			$inverted = ' inverted ';
+		}
+		$tmpColor = $colorThemeSetting;
+
 		$ret = '<div appuse="cards" group="navtabs" item="menu-top">
-		<div class="ui inverted vertical menu top attached fluid">
+		<div class="ui ' .$tmpColor . ' ' .  $inverted . ' vertical menu top attached fluid">
 		  <a action="toggleNav" href="javascript:void(0)" class="item">
 			<i class="close icon inverted"></i>
 			Close

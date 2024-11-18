@@ -16,7 +16,11 @@
 
 if ( ! defined( 'ACTAPPSTD_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'ACTAPPSTD_VERSION', '1.0.0' );
+	define( 'ACTAPPSTD_VERSION', '1.0.12' );
+}
+
+if ( !defined( 'ACTAPPSTD_BASE_DIR' ) ) {
+	define( 'ACTAPPSTD_BASE_DIR', get_template_directory() );
 }
 
 add_filter( 'body_class','actapp_body_classes' );
@@ -188,7 +192,6 @@ function actapptpl_scripts() {
 	}
 	remove_action('wp_head', '_admin_bar_bump_cb');
     wp_enqueue_style( 'admin_css_wp', get_template_directory_uri() . '/wp-widgets.css', false, '1.0.0' );
-	
 }
 add_action( 'wp_enqueue_scripts', 'actapptpl_scripts' );
 
@@ -197,6 +200,37 @@ function actapptpl_admin_style() {
     wp_enqueue_style( 'admin_css_wp', get_template_directory_uri() . '/wp-widgets.css', false, '1.0.0' );
 
 }
+
+
+
+
+
+//-------------   ADD OPTION TO CUSTOMIZE THEME AREA 
+
+
+
+function actappstd_theme_options( $wp_customize ){
+			
+	
+
+
+	
+}
+
+
+
+
+
+
+
+//-------------   ADD OPTION TO CUSTOMIZE THEME AREA - END
+
+
+
+
+
+
+
 
 /**
  * Implement the Custom Header feature.
@@ -221,7 +255,9 @@ require get_template_directory() . '/inc/widgets/actappw-recent-posts.php';
 /**
  * Customizer additions.
  */
+require get_template_directory() . '/inc/customthemecontrols.php';
 require get_template_directory() . '/inc/customizer.php';
+
 
 /**
  * Action App Template Entrypoint.
@@ -246,6 +282,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+add_action('customize_register', 'actappstd_theme_options');
 
 /**
  * Standard disable of stuff we don't want in the admin area
@@ -389,3 +427,6 @@ add_action( 'customize_register', 'actapp_customizer_remove_sections');
 
 	
 define( 'DISALLOW_FILE_EDIT', true );
+
+require_once ACTAPPSTD_BASE_DIR . '/cls/ActAppThemeOptions.php';
+
