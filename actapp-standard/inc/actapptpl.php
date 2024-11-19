@@ -67,15 +67,15 @@ class ActAppTpl {
 	
 	public static function get_mobile_nav($tree){
 		$retsubs = '';
+		$themeColors = ActAppThemeOptions::get_theme_colors();
+		$themeColor = $themeColors['maincolor'];
 		$inverted = '';
-		$colorThemeSetting = get_theme_mod( 'color_theme' );
-		if( $colorThemeSetting != "white"  ){
+		if( $themeColor != "white"  ){
 			$inverted = ' inverted ';
 		}
-		$tmpColor = $colorThemeSetting;
-
+	
 		$ret = '<div appuse="cards" group="navtabs" item="menu-top">
-		<div class="ui ' .$tmpColor . ' ' .  $inverted . ' vertical menu top attached fluid">
+		<div class="ui ' .$themeColor . ' ' .  $inverted . ' vertical menu top attached fluid">
 		  <a action="toggleNav" href="javascript:void(0)" class="item">
 			<i class="close icon inverted"></i>
 			Close
@@ -129,7 +129,7 @@ class ActAppTpl {
 			$tmpTitle = $obj->title;			
 			$tmpHasChildren = is_array($obj->children) && sizeof($obj->children) > 0;
 			if( $tmpHasChildren ){
-				$ret .= '<div appcomp="dropdown" class="ui dropdown item nomobile">';
+				$ret .= '<div appcomp="dropdown" class="ui dropdown item nomobile" style="font-weight:bolder !important;">';
 				$ret .= $tmpTitle.'<i class="dropdown icon"></i>';
 				$ret .= ' <div class="menu">';
 				$ret .= ''.self::get_menu_nav($obj->children);
@@ -137,9 +137,9 @@ class ActAppTpl {
 				$ret .= '</div>';
 			} else {
 				$tmpURL = $obj->url;
-				$ret .= '<a href="'.$tmpURL.'" class="item nomobile">';
+				$ret .= '<a href="'.$tmpURL.'" class="item nomobile"><div class="ui bolder">';
 				$ret .= $tmpTitle;
-				$ret .= '</a>';
+				$ret .= '</div></a>';
 			}
 		}
 		return $ret;

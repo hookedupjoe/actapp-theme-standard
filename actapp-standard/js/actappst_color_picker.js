@@ -14,7 +14,6 @@
 
         var tmpEl = ThisApp.getByAttr$({'data-customize-setting-link':tmpID});
 
-        console.log('actappst_color_picker__select called',tmpParams,tmpEl);
         tmpEl.get(0).value = tmpVal
         tmpEl.trigger('change');
     }

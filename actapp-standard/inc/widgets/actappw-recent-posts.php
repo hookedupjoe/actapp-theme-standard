@@ -38,13 +38,22 @@ if ( ! empty( $instance['title'] ) ) {
 
 //ActAppTpl::showRecentPosts($instance);
 $tmpLatest = ActAppTpl::getRecentPosts($tmpMax);
-$colorThemeSetting = get_theme_mod( 'color_theme' );
-if( $colorThemeSetting == 'white' ){
-    $colorThemeSetting = 'black';
-}
-echo ('<div class="ui header ' . $colorThemeSetting . ' medium">'.$tmpTitle.'</div>');
 
-echo ('<div class="ui list">');
+$themeColors = ActAppThemeOptions::get_theme_colors();
+$themeColor = $themeColors['maincolor'];
+$themeInvert = $themeColors['inverted'];
+if( $themeColor == 'white' ){
+    $themeColor = 'black';
+	$themeInvert = 'dark';
+}
+$theExtraClasses = '';
+if( $themeInvert == 'light' ){
+    $theExtraClasses = 'basic colored';
+}
+
+echo ('<div class="ui header center aligned mart2 medium">'.$tmpTitle.'</div>');
+
+echo ('<div class="ui list pad0 mar0">');
 
 foreach ($tmpLatest->posts as $aKey => $aPost) {
     //echo("<br/>".$value->guid);
@@ -56,12 +65,13 @@ foreach ($tmpLatest->posts as $aKey => $aPost) {
     $tmpDate = date(get_option( 'date_format' ),strtotime($aPost->post_date));
 
     echo('<a href="'.$tmpURL.'" class="item">');
-    echo('<div class="ui button circular basic black fluid">
-    <div class="ui header small ' . $colorThemeSetting . '">'.$tmpPostTitle.'</div>
-    <div class="ui ">'.$tmpDate.'</div>
+    echo('<div class="ui button circular pad8 ' . $themeColor . ' ' . $theExtraClasses . ' fluid">
+    <div class="ui larger">'.$tmpPostTitle.'</div>
+    <div class="pad5"></div>
+    <div style="font-size:smaller;" class="">'.$tmpDate.'</div>
   </div>');
     echo ('</a>');
-    
+
     
 }
 echo ('</div>');

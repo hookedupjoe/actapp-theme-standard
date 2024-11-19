@@ -45,3 +45,116 @@ Theme Wordpress Widget CSS
     margin-top:10px;
   }
 }
+
+/* Themed Button Elements */
+
+
+.theme-red.light .wp-element-button {
+	background-color: #DB2828;
+}
+
+.theme-orange.light .wp-element-button {
+	background-color: #F2711C;
+}
+
+.theme-olive.light .wp-element-button {
+	background-color: #B5CC18;
+}
+
+.theme-yellow.light .wp-element-button {
+	background-color: #FBBD08;
+}
+
+.theme-green.light .wp-element-button {
+	background-color: #21BA45;
+}
+
+.theme-teal.light .wp-element-button {
+	background-color: #00B5AD;
+}
+
+.theme-blue.light .wp-element-button {
+	background-color: #2185D0;
+}
+
+.theme-violet.light .wp-element-button {
+	background-color: #6435C9;
+}
+
+.theme-purple.light .wp-element-button {
+	background-color: #A333C8;
+}
+
+.theme-pink.light .wp-element-button {
+	background-color: #E03997;
+}
+
+.theme-brown.light .wp-element-button {
+	background-color: #A5673F;
+}
+
+.theme-grey.light .wp-element-button {
+	background-color: #767676;
+}
+
+.theme-white.light .wp-element-button {
+	background-color: black;
+}
+
+
+
+/* Themed Quote */
+
+.theme-red.light .wp-block-quote, .theme-red.light .wp-block-pullquote blockquote {
+  border-color: #DB2828;
+}
+
+.theme-orange.light .wp-block-quote, .theme-orange.light .wp-block-pullquote blockquote {
+  border-color: #F2711C;
+}
+
+.theme-olive.light .wp-block-quote, .theme-olive.light .wp-block-pullquote blockquote {
+  border-color: #B5CC18;
+}
+
+.theme-yellow.light .wp-block-quote, .theme-yellow.light .wp-block-pullquote blockquote {
+  border-color: #FBBD08;
+}
+
+.theme-green.light .wp-block-quote, .theme-green.light .wp-block-pullquote blockquote {
+  border-color: #21BA45;
+}
+
+.theme-teal.light .wp-block-quote, .theme-teal.light .wp-block-pullquote blockquote {
+  border-color: #00B5AD;
+}
+
+.theme-blue.light .wp-block-quote, .theme-blue.light .wp-block-pullquote blockquote {
+  border-color: #2185D0;
+}
+
+.theme-violet.light .wp-block-quote, .theme-violet.light .wp-block-pullquote blockquote {
+  border-color: #6435C9;
+}
+
+.theme-purple.light .wp-block-quote, .theme-purple.light .wp-block-pullquote blockquote {
+  border-color: #A333C8;
+}
+
+.theme-pink.light .wp-block-quote, .theme-pink.light .wp-block-pullquote blockquote {
+  border-color: #E03997;
+}
+
+.theme-brown.light .wp-block-quote, .theme-brown.light .wp-block-pullquote blockquote {
+  border-color: #A5673F;
+}
+
+.theme-grey.light .wp-block-quote, .theme-grey.light .wp-block-pullquote blockquote {
+  border-color: #767676;
+}
+
+.theme-white.light .wp-block-quote, .theme-white.light .wp-block-pullquote blockquote {
+  border-color: white;
+}
+
+    

@@ -43,11 +43,29 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                 <?php
                 }
 	}
+
 	class ActAppSt_Color_Picker extends WP_Customize_Control {
         /**
             * The type of control being rendered
             */
         public $type = 'actappst_color_picker';
+
+        private static $colorList = array(
+            "black" => "Black",
+            "red" => "Red",
+            "orange" => "Orange",
+            "olive" => "Olive",
+            "yellow" => "Yellow",
+            "green" => "Green",
+            "teal" => "Teal",
+            "blue" => "Blue",
+            "violet" => "Violet",
+            "purple" => "Purple",
+            "pink" => "Pink",
+            "brown" => "Brown",
+            "grey" => "Grey",
+            "white" => "White",
+        );
         
         /**
             * Enqueue our scripts and styles
@@ -63,10 +81,15 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                //echo($this->link());
                //$tmpLink = $this->link();
               
+             
                 ?>
                 
 
                 <input type="hidden" <?php $this->link(); ?>></input>
+
+
+
+                <div class="simple-notice-custom-control ui segment center aligned">
 
                 <?php if( !empty( $this->label ) ) { ?>
                       <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
@@ -74,12 +97,13 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                    <?php if( !empty( $this->description ) ) { ?>
                       <span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
                    <?php } ?>
-                   
-                <div class="simple-notice-custom-control ui message">
-                <div class="ui compact button" action="actappst_color_picker__select" settingval="white" setting="<?php echo( $this->id ); ?>">White</div>
-                <div class="ui compact button black" action="actappst_color_picker__select" settingval="black" setting="<?php echo( $this->id ); ?>">Black</div>
-                <div class="ui compact button blue" action="actappst_color_picker__select" settingval="blue" setting="<?php echo( $this->id ); ?>">Blue</div>
-                <div class="ui compact button green" action="actappst_color_picker__select" settingval="green" setting="<?php echo( $this->id ); ?>">Green</div>
+
+
+<?php 
+                foreach (self::$colorList as $aColorName => $aColorTitle) {
+                    echo( '<div style="width:45%;" class="ui compact button mart8 ' . $aColorName . '" action="actappst_color_picker__select" settingval="' . $aColorName . '" setting="' . $this->id . '">' . $aColorTitle . '</div>');
+                }
+                ?>
                 <?php
                 }
 	}

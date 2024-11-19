@@ -17,8 +17,8 @@
 	$tree = ActAppTpl::get_menu_tree( $menuname );
 	$json = json_encode( $tree );
 	$inverted = '';
-	//$invertedSetting = "";
-	$colorThemeSetting = get_theme_mod( 'color_theme' );
+	$themeColors = ActAppThemeOptions::get_theme_colors();
+	$colorThemeSetting = $themeColors['maincolor'];
 	if( $colorThemeSetting != "white"  ){
 		$inverted = ' inverted ';
 	}

@@ -9,7 +9,7 @@ Author URI: https://hookedup.com/
 Description: Description: A theme for Action App based websites.
 
 
-Version: 1.0.12
+Version: 1.0.13
 
 Tested up to: 6.0
 Requires PHP: 5.6
@@ -176,6 +176,8 @@ body.admin-bar header>div.site-branding {
 
 
 
+
+
 /*  Semantic UI Theme CSS */
 
 /*--- Black ---*/
@@ -272,100 +274,111 @@ theme-black .nav-area {
 /* LIGHT VERSIONS */
 
 
-/*--- Red ---*/
-.theme-light-red .page-header,  .theme-light-red .page-footer {
-  background-color: #FFE8E6;
-  color: #DB2828;
+.theme-red.light .page-header,  .theme-red.light .page-footer {
+  background-color: #FFE8E6 !important;
+  color: hsl(0, 71%, 51%);
 }
 
-.theme-light-orange .page-header,  .theme-light-orange .page-footer {
-  background-color: #FFEDDE;
+.theme-orange.light .page-header,  .theme-orange.light .page-footer {
+  background-color: #FFEDDE !important;
   color: #F2711C;
 }
 
-.theme-light-yellow .page-header,  .theme-light-yellow .page-footer {
-  background-color: #FFF8DB;
+.theme-yellow.light .page-header,  .theme-yellow.light .page-footer {
+  background-color: #FFF8DB !important;
   color: #B58105;
 }
 
-.theme-light-olive .page-header,  .theme-light-olive .page-footer {
-  background-color: #FBFDEF;
+.theme-olive.light .page-header,  .theme-olive.light .page-footer {
+  background-color: #FBFDEF !important;
   color: #8ABC1E;
 }
 
-.theme-light-green .page-header,  .theme-light-green .page-footer {
-  background-color: #E5F9E7;
+.theme-green.light .page-header,  .theme-green.light .page-footer {
+  background-color: #E5F9E7 !important;
   color: #1EBC30;
 }
 
-.theme-light-teal .page-header,  .theme-light-teal .page-footer {
-  background-color: #E1F7F7;
+.theme-teal.light .page-header,  .theme-teal.light .page-footer {
+  background-color: #E1F7F7 !important;
   color: #10A3A3;
 }
 
-.theme-light-blue .page-header,  .theme-light-blue .page-footer {
-  background-color: #DFF0FF;
+.theme-blue.light .page-header,  .theme-blue.light .page-footer {
+  background-color: #DFF0FF !important;
   color: #2185D0;
 }
 
-.theme-light-violet .page-header,  .theme-light-violet .page-footer {
-  background-color: #EAE7FF;
+.theme-violet.light .page-header,  .theme-violet.light .page-footer {
+  background-color: #EAE7FF !important;
   color: #6435C9;
 }
 
-.theme-light-purple .page-header,  .theme-light-purple .page-footer {
-  background-color: #F6E7FF;
+.theme-purple.light .page-header,  .theme-purple.light .page-footer {
+  background-color: #F6E7FF !important;
   color: #A333C8;
 }
 
-.theme-light-pink .page-header,  .theme-light-pink .page-footer {
-  background-color: #FFE3FB;
+.theme-pink.light .page-header,  .theme-pink.light .page-footer {
+  background-color: #FFE3FB !important;
   color: #E03997;
 }
 
-.theme-light-brown .page-header,  .theme-light-brown .page-footer {
-  background-color: #F1E2D3;
+.theme-brown.light .page-header,  .theme-brown.light .page-footer {
+  background-color: #F1E2D3 !important;
   color: #A5673F;
 }
 
 
-.theme-light-red .nav-area {
+.theme-red.light .nav-area {
 	background-color: #DB2828 !important;
 }
-.theme-light-orange .nav-area {
+
+.theme-orange.light .nav-area {
 	background-color: #F2711C !important;
 }
-.theme-light-olive .nav-area {
+
+.theme-olive.light .nav-area {
 	background-color: #B5CC18 !important;
 }
-.theme-light-yellow .nav-area {
+
+.theme-yellow.light .nav-area {
 	background-color: #FBBD08 !important;
 }
-.theme-light-green .nav-area {
+
+.theme-green.light .nav-area {
 	background-color: #21BA45 !important;
 }
-.theme-light-teal .nav-area {
+
+.theme-teal.light .nav-area {
 	background-color: #00B5AD !important;
 }
-.theme-light-blue .nav-area {
+
+.theme-blue.light .nav-area {
 	background-color: #2185D0 !important;
 }
-.theme-light-violet .nav-area {
+
+.theme-violet.light .nav-area {
 	background-color: #6435C9 !important;
 }
-.theme-light-purple .nav-area {
+
+.theme-purple.light .nav-area {
 	background-color: #A333C8 !important;
 }
-.theme-light-pink .nav-area {
+
+.theme-pink.light .nav-area {
 	background-color: #E03997 !important;
 }
-.theme-light-brown .nav-area {
+
+.theme-brown.light .nav-area {
 	background-color: #A5673F !important;
 }
-.theme-light-grey .nav-area {
+
+.theme-grey.light .nav-area {
 	background-color: #767676 !important;
 }
-.theme-light-white .nav-area {
+
+.theme-white.light .nav-area {
 	background-color: white !important;
 }
 

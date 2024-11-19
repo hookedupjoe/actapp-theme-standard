@@ -32,7 +32,14 @@ if ( ! function_exists( 'actapptpl_posted_on' ) ) :
 			$time_string
 		);
 
-		echo '<div class="ui label blue basic compact pad5 large" style="margin-bottom:10px;">' . $posted_on . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		$themeColors = ActAppThemeOptions::get_theme_colors();
+		$colorThemeSetting = $themeColors['maincolor'];
+		$inverted = '';
+		if( $colorThemeSetting != "white"  ){
+			$inverted = ' inverted ';
+		}
+	
+		echo '<div class="ui label bottom pointing arrow ' . $colorThemeSetting . '  compact pad5 large" style="margin-bottom:10px;">' . $posted_on . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -94,11 +101,18 @@ if ( ! function_exists( 'actapptpl_entry_footer' ) ) :
 			echo '</span>';
 		}
 
+		$inverted = '';
+		$themeColors = ActAppThemeOptions::get_theme_colors();
+		$colorThemeSetting = $themeColors['maincolor'];
+		if( $colorThemeSetting != "white"  ){
+			$inverted = ' inverted ';
+		}
+
 		edit_post_link(
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( '<hr /><div class="ui button small compact blue pad8">Edit</div> <span class="screen-reader-text">%s</span>', '_actapptpl' ),
+					__( '<hr /><div class="ui button small compact ' . $colorThemeSetting . ' pad8">Edit</div> <span class="screen-reader-text">%s</span>', '_actapptpl' ),
 					array(
 						'span' => array(
 							'class' => array(),

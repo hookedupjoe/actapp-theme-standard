@@ -60,38 +60,50 @@ class ActAppThemeOptions {
 	}
 	
 	
+	public static function get_theme_colors( ){
+		$themeColor = get_theme_mod( 'color_theme' );
+		if( !($themeColor) ){
+			$themeColor = 'black';
+		}
 
+		$themeInvert = get_theme_mod( 'inverted_theme' );
+		if( $themeColor == 'white'){
+			$themeInvert = 'dark';
+		}
+		if( $themeInvert != 'light' ){
+			$themeInvert = '';
+		}
+
+		return array(
+			"maincolor" => $themeColor,
+			"inverted" => $themeInvert
+		);
+
+	}
 
 	public static function setup_theme_options( $wp_customize ){
 
-		
-
-		
 		//Settings
 		$wp_customize->add_setting( 'color_theme', array( 'default' => 'black' ) );
 		$wp_customize->add_setting( 'inverted_theme', array( 'default' => 'dark' ) );
 		
-		
 		//Sections
 		$wp_customize->add_section(
-			'look-and-feel-options',
+			'actapp-theme-color',
 			array(
-				'title' => __( 'Look and Feel', '_s' ),
+				'title' => __( 'Theme Color', '_s' ),
 				'priority' => 30,
-				'description' => __( 'Theme look and feel options.', '_s' )
+				'description' => __( 'Theme color options.', '_s' )
 			)
 		);
-		
-		
 
-		
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
 				'inverted_theme',
 				array(
 					'label'          => __( 'Light or Dark?', '_s' ),
-					'section' => 'look-and-feel-options',
+					'section' => 'actapp-theme-color',
 					'settings'       => 'inverted_theme',
 					'type'           => 'radio',
 					'choices'        => array(
@@ -106,7 +118,7 @@ class ActAppThemeOptions {
 		array(
 		   'label' => __( 'Select a theme color' ),
 		   'description'  => esc_html__( 'This sets the overall theme color for this site.' ),
-		   'section' => 'look-and-feel-options',
+		   'section' => 'actapp-theme-color',
 		)
 	 ) );
 		
