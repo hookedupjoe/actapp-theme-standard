@@ -142,6 +142,7 @@ add_action( 'after_setup_theme', 'actapptpl_setup' );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function actapptpl_widgets_init() {
+
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', '_actapptpl' ),
@@ -411,22 +412,27 @@ add_action( 'wp_head', function() {
 
 function actapp_customizer_remove_sections( $wp_customize ) {
 
-	//$wp_customize->remove_section('header_image');
-	//$wp_customize->remove_panel('nav_menus');
+	//--- Adding a panel to override the widgets one that is not supported to hide it
+	$wp_customize->add_panel( 'nav_menus', array(
+		'title' => __( 'Custom Menus' ),
+		'theme_supports' => 'hiddenpanels',
+		'priority' => 10
+    ) );
+	$wp_customize->add_panel( 'widgets', array(
+		'title' => __( 'Custom Widgets' ),
+		'theme_supports' => 'hiddenpanels',
+		'priority' => 10
+    ) );
 
-	$wp_customize->remove_panel('widgets');
-//ToDo: Change to use: customize_loaded_components filter 
-
-	//$wp_customize->remove_section('custom_css');	
-	//$wp_customize->remove_section('colors');
 	$wp_customize->remove_section('background_image');
-	//$wp_customize->remove_section('static_front_page');	 
 	$wp_customize->remove_section('title_tagline');	
 }
-add_action( 'customize_register', 'actapp_customizer_remove_sections');
-
+add_action( 'customize_register', 'actapp_customizer_remove_sections',100);
 	
+
+
 define( 'DISALLOW_FILE_EDIT', true );
 
-require_once ACTAPPSTD_BASE_DIR . '/cls/ActAppThemeOptions.php';
 
+
+require_once ACTAPPSTD_BASE_DIR . '/cls/ActAppThemeOptions.php';
