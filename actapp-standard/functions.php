@@ -302,7 +302,7 @@ function actapptpl_remove_dashboard_meta() {
 add_action('admin_init', 'actapptpl_remove_dashboard_meta');
 
 function actapptpl_remove_admin_bar() {
-	if (!current_user_can('administrator') && !is_admin()) {
+	if (!current_user_can('administrator') && !current_user_can('editor') && !is_admin()) {
 		show_admin_bar(false);
 	}
 }

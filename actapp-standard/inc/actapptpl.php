@@ -38,7 +38,8 @@ class ActAppTpl {
 			<i class="folder open outline icon "></i>
 			'.$title.'
 		</div>';
-		
+
+		$retsubs = '';
 		foreach ( $tree as $key => $obj ) {
 			$tmpTitle = $obj->title;			
 			$tmpHasChildren = is_array($obj->children) && sizeof($obj->children) > 0;
@@ -129,7 +130,7 @@ class ActAppTpl {
 			$tmpTitle = $obj->title;			
 			$tmpHasChildren = is_array($obj->children) && sizeof($obj->children) > 0;
 			if( $tmpHasChildren ){
-				$ret .= '<div appcomp="dropdown" class="ui dropdown item nomobile" style="font-weight:bolder !important;">';
+				$ret .= '<div appcomp="dropdown" class="ui dropdown item nomobile actappstd-nav-menu">';
 				$ret .= $tmpTitle.'<i class="dropdown icon"></i>';
 				$ret .= ' <div class="menu">';
 				$ret .= ''.self::get_menu_nav($obj->children);
@@ -137,7 +138,7 @@ class ActAppTpl {
 				$ret .= '</div>';
 			} else {
 				$tmpURL = $obj->url;
-				$ret .= '<a href="'.$tmpURL.'" class="item nomobile"><div class="ui bolder">';
+				$ret .= '<a href="'.$tmpURL.'" class="item nomobile"><div class="actappstd-nav-menu">';
 				$ret .= $tmpTitle;
 				$ret .= '</div></a>';
 			}
@@ -170,6 +171,10 @@ class ActAppTpl {
 		
 		$nav_menu_levels = array();
 		$index = 0;
+
+		//--- ToDo: Revisit this
+		$last_level_ids = array();
+
 		if ( ! empty( $nav_menu_items_array ) ) do {
 			if ( $index == 0 ) {
 				foreach ( $nav_menu_items_array as $key => $obj ) {

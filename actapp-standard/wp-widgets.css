@@ -157,4 +157,34 @@ Theme Wordpress Widget CSS
   border-color: white;
 }
 
-    
+
+
+
+
+/* added custom stuff */
+
+
+ul.actapp-list {
+  list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+.actapp-list li {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-bottom: solid 1px black;
+}
+
+.actapp-list li:last-child {
+    border-bottom: none;
+}
+
+
+ul.separated {
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+
+
+
