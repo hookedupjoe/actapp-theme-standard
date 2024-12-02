@@ -22,6 +22,11 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
+				$themeShowHeader = get_theme_mod( 'actappstd_show_header' );
+				if( !is_front_page() && $themeShowHeader != 'no'){
+					echo( '<div class="ui header large blue">' . get_the_title() . '</div>');
+				}
+
 			get_template_part( 'template-parts/content', 'page' );
 		endwhile; // End of the loop.
 		?>

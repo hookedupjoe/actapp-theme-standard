@@ -95,7 +95,35 @@ class ActAppThemeOptions {
 		//Settings
 		$wp_customize->add_setting( 'color_theme', array( 'default' => 'black' ) );
 		$wp_customize->add_setting( 'inverted_theme', array( 'default' => 'dark' ) );
+		$wp_customize->add_setting( 'actappstd_show_header', array( 'default' => 'yes' ) );
 		
+				//Sections
+				$wp_customize->add_section(
+					'actapp-theme-general',
+					array(
+						'title' => __( 'General Options', '_s' ),
+						'priority' => 30,
+						'description' => __( 'Theme general options.', '_s' )
+					)
+				);
+		
+				$wp_customize->add_control(
+					new WP_Customize_Control(
+						$wp_customize,
+						'actappstd_show_header',
+						array(
+							'label'          => __( 'Include header on pages (except home)?', '_s' ),
+							'section' => 'actapp-theme-general',
+							'settings'       => 'actappstd_show_header',
+							'type'           => 'radio',
+							'choices'        => array(
+								'yes'   => __( 'Yes' ),
+								'no'  => __( 'No' )
+							)
+						)
+					)
+				);
+
 		//Sections
 		$wp_customize->add_section(
 			'actapp-theme-color',

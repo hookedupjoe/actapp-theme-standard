@@ -19,8 +19,13 @@ get_header();
 <div class="row">
 	<div class="col-sm-12 col-md-9 pad3">  
 		<div class="ui segment black blue slim">
-			<div class="ui header large blue"><?php echo the_title(); ?></div>
-		<?php
+			<?php 
+				$themeShowHeader = get_theme_mod( 'actappstd_show_header' );
+				if( $themeShowHeader != 'no'){
+					echo( '<div class="ui header large blue">' . get_the_title() . '</div>');
+				}
+			?>
+			<?php
 		while ( have_posts() ) :
 			the_post();
 

@@ -306,6 +306,7 @@ function actapptpl_remove_admin_bar() {
 		show_admin_bar(false);
 	}
 }
+
 add_action('after_setup_theme', 'actapptpl_remove_admin_bar');
 
 add_filter('get_the_archive_title', function ($title) {
