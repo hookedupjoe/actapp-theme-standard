@@ -1,5 +1,5 @@
 <?php
-/* Template Name: No Sidebar */ 
+/* Template Name: With Sidebar */ 
 /**
  * The template for displaying all pages
  *
@@ -14,7 +14,7 @@
  */
 
  get_header();
- $tmpType = 'full';
+ $tmpType = 'sidebar';
  ActAppTpl::showContentHeader($tmpType);
  
  while ( have_posts() ){

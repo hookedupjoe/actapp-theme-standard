@@ -9,8 +9,7 @@ Author URI: https://hookedup.com/
 Description: Description: A theme for Action App based websites.
 
 
-Version: 1.0.16
-
+Version: 1.0.19
 Tested up to: 6.0
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -21,11 +20,14 @@ Tags: action-app, actionapp-wp, semantic ui, semantic,
 This theme, like WordPress, is licensed under the GPL.
 */
 
+
 #page {
   width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+	font-family: Roboto, arial, helvetica, sans-serif;
+	font-size: 14px;
 }
 
 #page.fixedmenu {
@@ -63,9 +65,9 @@ This theme, like WordPress, is licensed under the GPL.
 }
 .page-footer {
   margin-top:10px;
-  background-color:#1b1c1d;
-  color: white;
+  border-top:1px solid;
 }
+
 .page-footer .full-container {
   padding: 10px;
   
@@ -184,9 +186,14 @@ body.admin-bar header>div.site-branding {
 
 .theme-black .page-header, .theme-black .page-footer {
 	background-color: black !important;
+  color: white;
 }
 theme-black .nav-area {
 	background-color: #1b1c1d !important;
+}
+
+.theme-black .page-header a, .theme-black .page-footer a{
+	color: white !important;
 }
 
 
@@ -194,80 +201,171 @@ theme-black .nav-area {
 
 .theme-red .page-header, .theme-red .nav-area, .theme-red .page-footer {
 	background-color: #DB2828 !important;
+  color: white;
+}
+.theme-red .page-header a, .theme-red .page-footer a{
+	color: white;
+}
+.theme-red.light .page-header a, .theme-red.light .page-footer a{
+	color: #DB2828;
 }
 
 /*--- Orange ---*/
 
 .theme-orange .page-header, .theme-orange .nav-area, .theme-orange .page-footer {
 	background-color: #F2711C !important;
+	color: white;
+}
+.theme-orange.light .page-header a, .theme-orange.light .page-footer a{
+	color: #F2711C;
+}
+.theme-orange .page-header a, .theme-orange .page-footer a{
+	color: white;
 }
 
 /*--- Olive ---*/
 
 .theme-olive .page-header, .theme-olive .nav-area, .theme-olive .page-footer {
 	background-color: #B5CC18 !important;
+	color: white;
+}
+.theme-olive.light .page-header a, .theme-olive.light .page-footer a{
+	color: #8ABC1E;
+}
+.theme-olive .page-header a, .theme-olive .page-footer a{
+	color: white;
 }
 
 /*--- Yellow ---*/
 
 .theme-yellow .page-header, .theme-yellow .nav-area, .theme-yellow .page-footer {
 	background-color: #FBBD08 !important;
+	color: white;
+}
+.theme-yellow.light .page-header a, .theme-yellow.light .page-footer a{
+	color: #B58105;
+}
+.theme-yellow .page-header a, .theme-yellow .page-footer a{
+	color: white;
 }
 
 /*--- Green ---*/
 
 .theme-green .page-header, .theme-green .nav-area, .theme-green .page-footer {
 	background-color: #21BA45 !important;
+	color: white;
+}
+.theme-green.light .page-header a, .theme-green.light .page-footer a{
+	color: #21BA45;
+}
+.theme-green .page-header a, .theme-green .page-footer a{
+	color: white;
 }
 
 /*--- Teal ---*/
 
 .theme-teal .page-header, .theme-teal .nav-area, .theme-teal .page-footer {
 	background-color: #00B5AD !important;
+	color: white;
+}
+.theme-teal.light .page-header a, .theme-teal.light .page-footer a{
+	color: #10A3A3;
+}
+.theme-teal .page-header a, .theme-teal .page-footer a{
+	color: white;
 }
 
 /*--- Blue ---*/
 
 .theme-blue .page-header, .theme-blue .nav-area, .theme-blue .page-footer {
 	background-color: #2185D0 !important;
+	color: white;
+}
+.theme-blue.light .page-header a, .theme-blue.light .page-footer a{
+	color: #2185D0;
+}
+.theme-blue .page-header a, .theme-blue .page-footer a{
+	color: white;
 }
 
 /*--- Violet ---*/
 
 .theme-violet .page-header, .theme-violet .nav-area, .theme-violet .page-footer {
 	background-color: #6435C9 !important;
+	color: white;
+}
+.theme-violet.light .page-header a, .theme-violet.light .page-footer a{
+	color: #6435C9;
+}
+.theme-violet .page-header a, .theme-violet .page-footer a{
+	color: white;
 }
 
 /*--- Purple ---*/
 
 .theme-purple .page-header, .theme-purple .nav-area, .theme-purple .page-footer {
 	background-color: #A333C8 !important;
+	color: white;
+}
+.theme-purple.light .page-header a, .theme-purple.light .page-footer a{
+	color: #A333C8;
+}
+.theme-purple .page-header a, .theme-purple .page-footer a{
+	color: white;
 }
 
 /*--- Pink ---*/
 
 .theme-pink .page-header, .theme-pink .nav-area, .theme-pink .page-footer {
 	background-color: #E03997 !important;
+	color: white;
+}
+.theme-pink.light .page-header a, .theme-pink.light .page-footer a{
+	color: #E03997;
+}
+.theme-pink .page-header a, .theme-pink .page-footer a{
+	color: white;
 }
 
 /*--- Brown ---*/
 
 .theme-brown .page-header, .theme-brown .nav-area, .theme-brown .page-footer {
 	background-color: #A5673F !important;
+	color: white;
+}
+.theme-brown.light .page-header a, .theme-brown.light .page-footer a{
+	color: #A5673F;
+}
+.theme-brown .page-header a, .theme-brown .page-footer a{
+	color: white;
 }
 
 /*--- Grey ---*/
 
 .theme-grey .page-header, .theme-grey .nav-area, .theme-grey .page-footer {
 	background-color: #767676 !important;
+	color: white;
 }
-
+.theme-grey.light .page-header a, .theme-grey.light .page-footer a{
+	color: white;
+}
+.theme-grey .page-header a, .theme-grey .page-footer a{
+	color: white;
+}
 
 /*--- White ---*/
 
 .theme-white .page-header, .theme-white .nav-area, .theme-white .page-footer {
 	background-color: white !important;
 }
+.theme-white .page-header a, .theme-white .page-footer a{
+	color: black;
+}
+
+.theme-white .page-header, .theme-white .page-footer{
+	color: black;
+}
+
 
 
 
@@ -382,6 +480,82 @@ theme-black .nav-area {
 	background-color: white !important;
 }
 
+.theme-white.light .page-header a, .theme-white.light .page-footer a{
+	color: black;
+}
 
 
 
+
+.theme-blue .borderline {
+	border-color: #2185D0 !important;
+}
+
+
+
+.actappsite-content-border {
+  padding: 0px 8px 8px 8px !important;
+}
+.actappsite-sidebar-border {
+  padding: 0px 8px 8px 0px !important;
+}
+
+.actappsite-content-border.sitepad0 {
+  padding-right: 0px !important;
+}
+.actappsite-content-border.sitepad1 {
+  padding-right: 1px !important;
+}
+.actappsite-content-border.sitepad2 {
+  padding-right: 2px !important;
+}
+.actappsite-content-border.sitepad3 {
+  padding-right: 3px !important;
+}
+.actappsite-content-border.sitepad4 {
+  padding-right: 4px !important;
+}
+.actappsite-content-border.sitepad5 {
+  padding-right: 5px !important;
+}
+.actappsite-content-border.sitepad6 {
+  padding-right: 6px !important;
+}
+.actappsite-content-border.sitepad7 {
+  padding-right: 7px !important;
+}
+.actappsite-content-border.sitepad8 {
+  padding-right: 8px !important;
+}
+.actappsite-content-border.sitepad9 {
+  padding-right: 9px !important;
+}
+.actappsite-content-border.sitepad10 {
+  padding-right: 10px !important;
+}
+.actappsite-content-border.sitepad15 {
+  padding-right: 15px !important;
+}
+.actappsite-content-border.sitepad20 {
+  padding-right: 20px !important;
+}
+
+
+@media screen and (max-width: 782px){
+  .actappsite-content-border {
+    padding: 10px !important;
+  }
+  .actappsite-sidebar-border {
+    padding: 10px !important;
+  }
+}
+
+.flex-center-container {
+  display: table;
+}
+
+.flex-center-child {
+  display: table-cell;
+  text-align: center; /* Centers text Horizontally */
+  vertical-align: middle; /* Centers text Vertically */
+}

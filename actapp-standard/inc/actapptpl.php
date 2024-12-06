@@ -14,11 +14,168 @@ class ActAppTpl {
 		return self::$instance;
 	}
 
+	
+	public static function getHeaderMarkup($theText, $theSize = 'theme', $theColor = 'theme', $theIsPageHeader = false){
+		$tmpRet = '';
+		$tmpClasses = 'ui header';
+		if( $theIsPageHeader ){
+			$theSize = 'theme';
+			$theColor = 'theme';
+		}
+		$tmpColor = $theColor;
+
+		
+
+		if( ($theSize) && $theSize != 'default' ){
+			if( $theSize == 'theme'){
+				$theSize = get_theme_mod( 'actappstd_header_size' );
+			}
+			$tmpClasses .= ' ' . $theSize;
+		}
+		if( $tmpColor == 'theme' || $tmpColor == 'default'){
+			$tmpColorTheme = get_theme_mod( 'color_theme' );
+			$tmpColorThemeHeader = get_theme_mod( 'actappstd_header_color' );
+			if( $tmpColorThemeHeader == 'default' || $tmpColorThemeHeader == ''){
+				$tmpColorThemeHeader = $tmpColorTheme;
+			}
+			$tmpColor = $tmpColorThemeHeader;
+			
+		}
+		$tmpClasses .= ' '.$tmpColor;
+		
+		
+		if( $theIsPageHeader ){
+			$tmpUnderlined = get_theme_mod( 'actappstd_header_underlined' );
+			if( $tmpUnderlined ){
+				$tmpClasses .= ' dividing';
+			}
+		}
+
+		$tmpRet .= '<div class="'.$tmpClasses.'">';
+		$tmpRet .= $theText;
+		$tmpRet .= '</div>';
+		
+		return $tmpRet;
+	}
+
+	public static function showContentHeader($thePageType = ''){
+		$themeColor = get_theme_mod( 'color_theme' );
+		$themeSegmentUseColor = get_theme_mod( 'actappstd_segmented_theme_color' );
+		$themeShowHeader = get_theme_mod( 'actappstd_show_header' );
+		$tmpShowSegment = get_theme_mod( 'actappstd_segmented_content' );
+		$themeContentPadding = get_theme_mod( 'actappstd_content_padding' );
+		$themeSidebarSpacing = get_theme_mod( 'actappstd_sidebar_spacing' );
+		
+		$tmpShowSidebar = true;
+		$themeContentBodySizeMed = '9';
+		$themeContentSidebarSizeMed = '3';
+		
+		
+		if( $thePageType == 'full'  || $thePageType == 'blank' ){
+			$tmpShowSidebar = false;
+		}
+		if( !($tmpShowSidebar)){
+			$themeContentBodySizeMed = '12';
+		}
+
+		$tmpClassesSeg = $themeContentPadding;
+
+		if( is_front_page() || $thePageType == 'blank' ){
+			$themeShowHeader = false;
+		}
+
+
+		if( !$tmpShowSegment ){
+			//--- Really use a segment but do not include the line, 
+			//    this assures everything works the same, including site padding
+			$tmpClassesSeg .= ' basic ';
+		} else {
+			if( $themeSegmentUseColor ){
+				$tmpClassesSeg .= ' '. $themeColor;
+			}
+		}
+
+		$tmpClasses = ' col-md-'. $themeContentBodySizeMed.' '.$themeSidebarSpacing;
+		
+		$tmpRet = '';
+		$tmpRet .= '<div class="row">'; 
+		$tmpRet .= '  <div style="display: flex;" class="col-sm-12 actappsite-content-border '.$tmpClasses.'">'; 
+
+		//if( $tmpShowSegment ){
+			$tmpRet .= '<div style="flex-grow: 1;" class="ui segment '.$tmpClassesSeg.'">'; 
+		//}
+		if($themeShowHeader ){
+			$tmpRet .=  self::getHeaderMarkup(get_the_title(),'theme','theme',true);
+			//$tmpRet .= '<div class="ui header large '.$themeColor.'">' . get_the_title() . '</div>'; 
+		}
+
+		echo($tmpRet);
+		return true;
+	}
+
+	public static function showContenSidebar($thePageType = ''){
+		$themeColor = get_theme_mod( 'color_theme' );
+		$themeSegmentUseColor = get_theme_mod( 'actappstd_segmented_theme_color' );
+
+		$themeSegContent = get_theme_mod( 'actappstd_segmented_content' );
+		$themeSegSidebar = get_theme_mod( 'actappstd_segmented_sidebar' );
+		$themeSegColor = get_theme_mod( 'actappstd_segmented_theme_color' );
+
+		$tmpShowSidebar = true;
+		$themeContentPadding = get_theme_mod( 'actappstd_sidebar_padding' );
+		$themeContentBodySizeMed = '9';
+		$themeContentSidebarSizeMed = '3';
+		if( $thePageType == 'full' || $thePageType == 'blank' ){
+			$tmpShowSidebar = false;
+		}
+		$tmpClasses = ' col-md-'. $themeContentSidebarSizeMed;
+		
+		
+		$tmpClassesSeg = $themeContentPadding;
+
+		//if( $themeSegContent ){
+			//--- End Segment that is always there
+			echo('</div>'); 
+		//}
+		
+		
+		if( !$themeSegSidebar ){
+			//--- Really use a segment but do not include the line, 
+			//    this assures everything works the same, including site padding
+			$tmpClassesSeg .= ' basic ';
+		} else {
+			if( $themeSegmentUseColor ){
+				$tmpClassesSeg .= ' '. $themeColor;
+			}
+		}
+		//--- End the content area section
+		echo('</div>');
+		
+		//--- If we have a sidebar, add it here
+		if($tmpShowSidebar){
+			echo( '<div style="display: flex;" class="col-sm-12 actappsite-sidebar-border'.$tmpClasses.'">');
+			echo( '  <div style="flex-grow: 1;" class="ui segment '.$tmpClassesSeg.'">');
+			get_sidebar(); 
+			echo( '  </div>');
+			echo('</div>');
+		}
+		
+		return true;
+	}
+
+
+	public static function showContenFooter(){
+		echo '</div>';
+		return true;
+	}
+
 	public static function get_login_link(){
 		$ret = '';
 		if (!is_user_logged_in()) {
-			//ToDo: Make this an option
-			$ret .= '<a class="ui item" href="' . wp_login_url($_SERVER["REQUEST_URI"]) . '"><i class="icon user"></i> Login</a>';
+			$tmpHideLogin = get_theme_mod( 'actappstd_hide_login' );
+			if( !($tmpHideLogin) ){
+				$ret .= '<a class="ui item" href="' . wp_login_url($_SERVER["REQUEST_URI"]) . '"><i class="icon user"></i> Login</a>';
+			}
 		} else {
 			$ret .= '<a class="ui item" href="' . wp_logout_url($_SERVER["REQUEST_URI"]) . '"><i class="icon user"></i> Logout</a>';
 		}

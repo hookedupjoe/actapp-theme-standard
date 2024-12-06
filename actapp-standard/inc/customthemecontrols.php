@@ -51,6 +51,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
         public $type = 'actappst_color_picker';
 
         private static $colorList = array(
+            "default" => "Default",
             "black" => "Black",
             "red" => "Red",
             "orange" => "Orange",

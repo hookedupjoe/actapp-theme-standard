@@ -1,5 +1,5 @@
 <?php
-/* Template Name: No Sidebar */ 
+/* Template Name: Blank Page */ 
 /**
  * The template for displaying all pages
  *
@@ -13,19 +13,19 @@
  * @package actionapptheme
  */
 
- get_header();
- $tmpType = 'full';
- ActAppTpl::showContentHeader($tmpType);
- 
- while ( have_posts() ){
-	 the_post();
-	 get_template_part( 'template-parts/content', 'page' );
- }
- 
- ActAppTpl::showContenSidebar($tmpType);
- 
- ActAppTpl::showContenFooter($tmpType);
- get_footer(); 
+get_header();
+$tmpType = 'blank';
+ActAppTpl::showContentHeader($tmpType);
+
+while ( have_posts() ){
+	the_post();
+	get_template_part( 'template-parts/content', 'page' );
+}
+
+ActAppTpl::showContenSidebar($tmpType);
+
+ActAppTpl::showContenFooter($tmpType);
+get_footer(); 
 
 ?>
 

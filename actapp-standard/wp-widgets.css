@@ -24,6 +24,8 @@ Theme Wordpress Widget CSS
 .wp-block-pullquote {
   padding:18px;
 }
+
+
 .wp-block-pullquote blockquote {
   padding:8px;
   border-top: solid 2px #222222;
@@ -39,6 +41,14 @@ Theme Wordpress Widget CSS
 .wp-block-columns.is-layout-flex {
   gap: 5px;
 }
+
+
+
+ul.wp-block-list {
+  padding-left: 20px;
+  margin-top: 2px;
+}
+
 
 @media only screen and (max-width: 767px) {
   .wp-block-media-text__content {
