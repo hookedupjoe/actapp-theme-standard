@@ -196,5 +196,7 @@ ul.separated {
   border-bottom: solid 2px black;
 }
 
-
+.actappui.ui.header, .actappui.ui.message, .actappui.ui.message.inverted, .actappui.ui.header.inverted {
+  padding: 8px;
+}
 

@@ -349,6 +349,11 @@ function actapp_theme_bluebutton( $atts, $content = "" ) {
 	
 }
 
+function actappstd_current_year( $atts ){
+    return date('Y');
+}
+add_shortcode( 'current_year', 'actappstd_current_year' );
+
 
 add_filter( 'widget_text', 'shortcode_unautop');
 add_filter( 'widget_text', 'do_shortcode');
