@@ -200,3 +200,7 @@ ul.separated {
   padding: 8px;
 }
 
+figure.wp-block-video {
+  padding:4px;
+  border:solid 1px #aaaaaa;
+}
