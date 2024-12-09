@@ -204,3 +204,16 @@ figure.wp-block-video {
   padding:4px;
   border:solid 1px #aaaaaa;
 }
+
+.actappeditor-icon {
+  width: 25px;
+  height: 25px;
+}
+.actappeditor-icon.right {
+  margin-right: 3px;
+  float:right;
+}
+.actappeditor-icon.left {
+  margin-left: 3px;
+  float:left;
+}
